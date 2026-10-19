@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Stories – sign-in complete</title><link rel="stylesheet" href="/stories/style.css"></head><body>
+<h1>Sign-in callback</h1>
+<div id="out"><p>No authorisation code found in this link.</p></div>
+<script>
+const p=new URLSearchParams(location.search);const code=p.get('code');const err=p.get('error')||p.get('error_description');
+const out=document.getElementById('out');
+if(code){out.innerHTML='<p>Authorised. Copy this code and paste it into the secure box in your Stories chat. It expires in a few minutes.</p><div class="code" id="c"></div><button id="b">Copy code</button>';
+document.getElementById('c').textContent=code;
+document.getElementById('b').onclick=()=>{navigator.clipboard.writeText(code).then(()=>{document.getElementById('b').textContent='Copied ✓'})};}
+else if(err){out.innerHTML='<p>Authorisation failed:</p><div class="code" id="c"></div>';document.getElementById('c').textContent=err;}
+</script>
+<footer><a href="/stories/">Stories</a> · <a href="/stories/privacy/">Privacy</a> · <a href="/stories/terms/">Terms</a></footer>
+</body></html>
