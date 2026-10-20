@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Stories – Post to TikTok</title><link rel="stylesheet" href="/stories/style.css"><link rel="stylesheet" href="/stories/app/app.css"></head><body>
+<h1>Post to TikTok</h1>
+<p class="muted">Stories: narrated classic short stories. Sign in with TikTok, review your video and choose your post settings.</p>
+
+<section id="s-login" class="card" hidden>
+  <h2>1. Sign in</h2>
+  <p>Connect your TikTok account to post your story video.</p>
+  <button id="btn-login" class="tt">Continue with TikTok</button>
+  <p class="small muted">You'll be asked to allow: your basic profile info, posting content to TikTok, and uploading drafts to TikTok.</p>
+</section>
+
+<section id="s-account" class="card" hidden>
+  <div class="row"><img id="acc-avatar" class="avatar" alt=""><div><div class="small muted">Posting to</div><div id="acc-name" class="strong"></div><div id="acc-user" class="small muted"></div></div>
+  <button id="btn-logout" class="ghost right">Sign out</button></div>
+  <div id="acc-blocked" class="warn" hidden></div>
+</section>
+
+<section id="s-compose" class="card" hidden>
+  <h2>2. Your video</h2>
+  <video id="preview" controls playsinline preload="metadata"></video>
+  <div id="dur" class="small muted"></div>
+  <div id="dur-warn" class="warn" hidden></div>
+
+  <h2>3. Post settings</h2>
+  <label for="title" class="lbl">Caption</label>
+  <textarea id="title" rows="6" maxlength="2200"></textarea>
+  <div class="small muted"><span id="title-n">0</span>/2200</div>
+
+  <label for="privacy" class="lbl">Who can view this video</label>
+  <select id="privacy"><option value="" disabled selected>Select who can view</option></select>
+  <div id="privacy-note" class="small muted"></div>
+
+  <div class="lbl">Allow users to</div>
+  <label class="chk"><input type="checkbox" id="allow-comment"> Comment</label>
+  <label class="chk"><input type="checkbox" id="allow-duet"> Duet</label>
+  <label class="chk"><input type="checkbox" id="allow-stitch"> Stitch</label>
+
+  <div class="lbl">Disclose video content</div>
+  <label class="switch"><input type="checkbox" id="commercial"> <span>This video promotes yourself, a brand, product or service</span></label>
+  <div id="commercial-opts" hidden>
+    <label class="chk"><input type="checkbox" id="your-brand"> Your brand <span class="small muted">– You are promoting yourself or your own business.</span></label>
+    <label class="chk" id="bc-wrap"><input type="checkbox" id="branded"> Branded content <span class="small muted">– You are promoting another brand or a third party.</span></label>
+    <div id="bc-note" class="small muted" hidden>Branded content visibility cannot be set to private.</div>
+    <div id="label-prompt" class="info" hidden></div>
+  </div>
+
+  <label class="chk"><input type="checkbox" id="aigc"> AI-generated content <span class="small muted">(this video uses a synthetic narrator voice)</span></label>
+
+  <p id="consent" class="consent"></p>
+  <span id="post-wrap" title=""><button id="btn-post" disabled>Post to TikTok</button></span>
+  <div class="or">or</div>
+  <button id="btn-inbox" class="ghost">Send to TikTok drafts (inbox)</button>
+  <div class="small muted">Drafts go to your TikTok inbox. Open the TikTok app, edit if you like, and post from there. Your settings above aren't applied to drafts.</div>
+</section>
+
+<section id="s-status" class="card" hidden>
+  <h2>4. Status</h2>
+  <div id="status-msg" class="info"></div>
+  <ul id="status-log" class="small"></ul>
+  <button id="btn-again" class="ghost" hidden>Back to post settings</button>
+</section>
+
+<div id="err" class="warn" hidden></div>
+<p id="backend-note" class="small muted"></p>
+<footer><a href="/stories/">Stories</a> · <a href="/stories/privacy/">Privacy</a> · <a href="/stories/terms/">Terms</a></footer>
+<script src="/stories/app/app.js"></script>
+</body></html>

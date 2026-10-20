@@ -1,0 +1,17 @@
+.muted{color:#555}.small{font-size:.9rem}.strong{font-weight:600}
+h2{font-size:1.15rem;margin:18px 0 8px}
+.card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:16px 18px;margin:16px 0}
+.row{display:flex;align-items:center;gap:12px}.right{margin-left:auto;margin-top:0}
+.avatar{width:48px;height:48px;border-radius:50%;background:#ddd;object-fit:cover}
+video{width:100%;max-width:300px;aspect-ratio:9/16;background:#000;border-radius:10px;display:block}
+.lbl{display:block;font-weight:600;margin:14px 0 6px}
+textarea,select{width:100%;box-sizing:border-box;font:inherit;padding:10px;border-radius:8px;border:1px solid #ccc;background:#fff}
+.chk,.switch{display:block;margin:6px 0}.chk input,.switch input{margin-right:8px}
+.chk.disabled{color:#999}
+button:disabled{background:#999;cursor:not-allowed}
+button.ghost{background:#fff;color:#111;border:1px solid #111}
+button.tt{background:#111}
+.consent{margin-top:18px}
+.info{background:#eef6ff;border:1px solid #cfe3ff;padding:10px 12px;border-radius:8px;margin-top:8px}
+.warn{background:#fff4f4;border:1px solid #f3c2c2;padding:10px 12px;border-radius:8px;margin-top:8px}
+.or{margin:10px 0 0;color:#555}

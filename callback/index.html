@@ -2,7 +2,10 @@
 <h1>Sign-in callback</h1>
 <div id="out"><p>No authorisation code found in this link.</p></div>
 <script>
-const p=new URLSearchParams(location.search);const code=p.get('code');const err=p.get('error')||p.get('error_description');
+const p=new URLSearchParams(location.search);
+// App sign-ins (state starts with app_) continue in the posting page; other sign-ins keep the copy-code behaviour below.
+if((p.get('state')||'').startsWith('app_')){location.replace('/stories/app/'+location.search);}
+const code=p.get('code');const err=p.get('error')||p.get('error_description');
 const out=document.getElementById('out');
 if(code){out.innerHTML='<p>Authorised. Copy this code and paste it into the secure box in your Stories chat. It expires in a few minutes.</p><div class="code" id="c"></div><button id="b">Copy code</button>';
 document.getElementById('c').textContent=code;
